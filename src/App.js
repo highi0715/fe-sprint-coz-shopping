@@ -1,8 +1,11 @@
+import Main from "./page/Main";
+import "./bass.css";
+
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        aa
+        <Main></Main>
       </header>
     </div>
   );
