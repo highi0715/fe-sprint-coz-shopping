@@ -1,0 +1,14 @@
+.product-container {
+    display: flex;
+    flex-direction: column;
+    padding: 12px;
+}
+h3 {
+    font-size: 16px;
+    font-weight: bold;
+}
+.product-img {
+    width: 264px;
+    height: 210px;
+    border-radius: 12px;
+}
