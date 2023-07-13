@@ -1,0 +1,20 @@
+ul {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    justify-content: center;
+}
+
+li{
+    display: flex;
+    flex-direction: column;
+    padding: 18px;
+}
+li > span {
+    display: flex;
+    font-size: 16px;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    padding-top: 8px;
+}
