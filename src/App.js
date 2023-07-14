@@ -1,13 +1,15 @@
 import Main from "./page/Main";
 import "./bass.css";
 import { useEffect, useState } from "react";
+import Footer from "./component/Footer/Footer";
+import Header from "./component/Header/Header";
 
 
 function App() {
   const [products, setProducts] = useState([]);
 
   useEffect(()=>{
-    fetch('http://cozshopping.codestates-seb.link/api/v1/products?count=4')
+    fetch('http://cozshopping.codestates-seb.link/api/v1/products')
     .then(res => res.json())
     .then(json => {
       setProducts(json)
@@ -16,9 +18,9 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">
-        <Main key={products.id} products={products}></Main>
-      </header>
+      <Header />
+      <Main key={products.id} products={products}></Main>
+      <Footer />
     </div>
   );
 }
