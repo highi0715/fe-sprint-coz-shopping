@@ -3,7 +3,7 @@ import "./bass.css";
 import { useEffect, useState } from "react";
 import Footer from "./component/Footer/Footer";
 import Header from "./component/Header/Header";
-import { BrowserRouter, Route, Routes, Link } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ProductList from "./page/ProductList";
 import Bookmark from "./page/Bookmark";
 
@@ -38,15 +38,17 @@ function App() {
   };
 
   useEffect(() => {
-    const storedBookmarkedProducts = localStorage.getItem("bookmarkedProducts");
-    if (storedBookmarkedProducts) {
-      setBookmarkedProducts(JSON.parse(storedBookmarkedProducts));
+    // 최초 실행 시 로컬 스토리지에서 아이템을 가져옴
+    if (!bookmarkedProducts.length) {
+      const storedBookmarkedProducts = localStorage.getItem("bookmarkedProducts");
+      if (storedBookmarkedProducts) {
+        setBookmarkedProducts(JSON.parse(storedBookmarkedProducts));
+      }
+    } else { // 그렇지 않다면 변경된 bookmarkedProducts를 저장
+      localStorage.setItem("bookmarkedProducts", JSON.stringify(bookmarkedProducts));
     }
-  }, []);
-
-  useEffect(() => {
-    localStorage.setItem("bookmarkedProducts", JSON.stringify(bookmarkedProducts));
   }, [bookmarkedProducts]);
+
 
   return (
     <BrowserRouter>

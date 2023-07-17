@@ -1,10 +1,12 @@
 import './product.css';
-import React from 'react';
+import React,{useMemo} from 'react';
 
 export default function Product ({ image_url, title, type, products, bookmarkedProducts , updateBookmarkedProducts, }) {
     const price = new Intl.NumberFormat().format(products.price);
     const follower = new Intl.NumberFormat().format(products.follower);
-    const isBookmarked = bookmarkedProducts.some((p) => p.id === products.id);
+    const isBookmarked = useMemo(() => {
+        return bookmarkedProducts.some((p) => p.id === products.id);
+      }, [bookmarkedProducts, products.id]);
     
     
     const toggleBookmark = () => {

@@ -29,3 +29,7 @@ div.logo-img{
     justify-content: center;
     align-items: center;
 }
+
+.dropdown-container {
+    position: relative;
+}
