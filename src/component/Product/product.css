@@ -42,3 +42,12 @@ h3 {
     height: 210px;
     border-radius: 12px;
 }
+.bookmark {
+    position: absolute;
+    right: 0.5em;
+    bottom: 0.75em;
+    
+}
+.img-wrap {
+    position: relative;
+}

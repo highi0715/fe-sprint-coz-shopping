@@ -3,3 +3,9 @@
  padding: 0px;
  margin: 0px;
 }
+
+.App {
+    height : auto;
+    min-height: 100%;
+    padding-bottom: 58px;
+}
