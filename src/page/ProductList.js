@@ -1,8 +1,10 @@
-import Filter from "../component/Filter"
+import Filter from "../component/Filter/Filter"
 
 export default function ProductList() {
     return (
-        <Filter />
-        
+        <section>
+            <Filter />
+            <div>상품리스트 페이지</div>
+        </section>
     )
 }

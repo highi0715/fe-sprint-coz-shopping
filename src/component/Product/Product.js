@@ -1,14 +1,9 @@
 import './product.css';
 
 export default function Product ({ image_url, title, type, products }) {
-    // return (
-    //     // <div className='product-container'>
-    //     //     <img src={image_url} alt='product picture' className='product-img'/>
-    //     //     <h3>{title}</h3>
-    //     //     <span className='product-detail'>product detail</span>
-    //     // </div>
-        
-    // )
+    const price = new Intl.NumberFormat().format(products.price);
+    const follower = new Intl.NumberFormat().format(products.follower);
+
     switch (type) {
         case "Product":
             return ( 
@@ -18,7 +13,7 @@ export default function Product ({ image_url, title, type, products }) {
                         <h3>{title}</h3>
                         <span className='discount-percent'>{products.discountPercentage}%</span>
                     </div>
-                    <div className='price'>{products.price}원</div>
+                    <div className='price'>{price}원</div>
                 </div>
             )
             
@@ -47,7 +42,7 @@ export default function Product ({ image_url, title, type, products }) {
                         <span>{products.brand_name}</span>
                         <span>관심고객수</span>
                     </h3>
-                    <div className='follower'>{products.follower}</div>
+                    <div className='follower'>{follower}</div>
                 </div>
             )       
     }

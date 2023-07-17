@@ -1,7 +1,10 @@
-import Filter from "../component/Filter"
+import Filter from "../component/Filter/Filter"
 
 export default function Bookmark() {
     return (
-        <Filter />
+        <section>
+            <Filter />
+            <div>북마크리스트 페이지</div>
+        </section>
     )
 }
